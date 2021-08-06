@@ -1,16 +1,17 @@
-const { Schema, model } = require('mongoose');
-const Ciclos = mongoose.model('Ciclos');
+const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
+const Ciclos = model('Ciclos');
 
 const retoEjerciciosSchema = new Schema({
-    ciclo: { type: Scheme.ObjectId, ref: "Ciclos" },
-    ejercicio1: { type: String },
-    link1: { type: String },
-    ejercicio2: { type: String },
-    link2: { type: String },
-    ejercicio3: { type: String },
-    link3: { type: String },
-    ejercicio4: { type: String },
-    link4: { type: String },
+    ejercicio1: { type: String, trim: true },
+    link1: { type: String, trim: true },
+    ejercicio2: { type: String, trim: true },
+    link2: { type: String, trim: true },
+    ejercicio3: { type: String, trim: true },
+    link3: { type: String, trim: true },
+    ejercicio4: { type: String, trim: true },
+    link4: { type: String, trim: true },
+    ciclo: { type: Schema.ObjectId, ref: "Ciclos" }
 }, {
     timestamps: true
 });

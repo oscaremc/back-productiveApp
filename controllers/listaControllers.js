@@ -1,11 +1,11 @@
-const Users = require('../models/Users');
+const Lista = require('../models/Lista');
 
-exports.nuevoUser = async (req, res, next) => {
-    const user = new Users(req.body);
+exports.nuevoLista = async (req, res, next) => {
+    const lista = new Lista(req.body);
 
     try {
         // almacenar el registro
-        await user.save();
+        await lista.save();
         res.json({mensaje: 'se agrego un nuevo cliente'});
     } catch (error) {
         // si hay un error, console.log y next

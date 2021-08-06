@@ -1,8 +1,8 @@
-const { Schema, model } = require('mongoose');
-const User = mongoose.model('User');
+const mongoose = require('mongoose');
+const {Schema, model} = mongoose;
+const Users = model('Users');
 
 const objetiveSchema = new Schema({
-    user: { type: Scheme.ObjectId, ref: "User" },
     fecha_objetivo: { type: String, trim: true },
     nombre_objetivo: { type: String, trim: true, require: true },
     hora_planeada: { type: Number, require: true },
@@ -11,8 +11,10 @@ const objetiveSchema = new Schema({
     cantidad_ciclos: { type: Number },
     ciclos_total: { type: Array },
     status: { type: Boolean },
+    user: { type: Schema.ObjectId, ref: 'Users' }
 }, {
     timestamps: true
 });
 
 module.exports = model('Objective', objetiveSchema);
+

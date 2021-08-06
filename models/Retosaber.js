@@ -1,10 +1,11 @@
-const { Schema, model } = require('mongoose');
-const Ciclos = mongoose.model('Ciclos');
+const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
+const Ciclos = model('Ciclos');
 
 const retoSaberSchema = new Schema({
-    ciclo: { type: Scheme.ObjectId, ref: "Ciclos" },
     enbabezado: { type: String, trim: true },
     contenido: { type: String, trim: true },
+    ciclo: { type: Schema.ObjectId, ref: "Ciclos" }
 }, {
     timestamps: true
 });

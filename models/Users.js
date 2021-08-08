@@ -12,10 +12,9 @@ module.exports = model("Users", userSchema);
 
 /*
 
+const bcrypt = require('bcryptjs');
 // ### encriptar clave ###
 
-//instalar modulo
-const bcrypt = require('bcryptjs');
 //donde toma clave y la retorna cifrada
 userSchema.methods.encryPassword = async password => {
     const salt = await bcrypt.genSalt(10);

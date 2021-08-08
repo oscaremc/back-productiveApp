@@ -13,3 +13,46 @@ exports.nuevoUser = async (req, res, next) => {
         next();
     }
 }
+
+exports.mostrarUsers = async (req, res, next) => {
+    try {
+        const users = await Users.find({});
+        res.json(users)
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+
+exports.mostrarUser = async (req, res, next) => {
+    const user = await Users.findById(req.params.idUser);
+    if(!user) {
+        res.json({mensaje: 'Ese User no existe'});
+        next();
+    }
+    res.json(user);
+}
+
+
+exports.actualizarUser = async (req, res, next) => {
+    try {
+        const user = await Users.findOneAndUpdate({ _id : req.params.idUser },
+            req.body, {
+                new : true
+            });
+            res.json(user);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+
+exports.eliminarUser = async (req, res, next) => {
+    try {
+        await Users.findOneAndDelete({_id : req.params.idUser});
+        res.json({mensaje: 'El cliente se ha eliminado'});
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}

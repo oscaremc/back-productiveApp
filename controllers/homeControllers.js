@@ -1,3 +1,3 @@
 exports.homeControllers = (req, res) => {
-    res.send('Index');
+    res.send('HOLA MUNDISIMO!');
 }

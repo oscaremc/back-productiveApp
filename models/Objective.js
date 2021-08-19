@@ -5,7 +5,7 @@ const Users = model('Users');
 const objetiveSchema = new Schema({
     fecha_objetivo: { type: String, trim: true },
     nombre_objetivo: { type: String, trim: true, require: true },
-    hora_planeada: { type: Number, require: true },
+    hora_planeada: { type: String, require: true },
     tiempo_trabajo: { type: Number },
     tiempo_descanso: { type: Number },
     cantidad_ciclos: { type: Number },

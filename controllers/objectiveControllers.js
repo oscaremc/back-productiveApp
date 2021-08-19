@@ -36,10 +36,10 @@ exports.mostrarObjetive = async (req, res, next) => {
 
 exports.actualizarObjetive = async (req, res, next) => {
     try {
-        const objective = await Objective.findOneAndUpdate({ _id : req.params.idObjetive },
-            req.body, {
-                new : true
-            });
+        const objective = await Objective.findOneAndUpdate(
+            { _id : req.params.idObjetive },
+            req.body.update, 
+            { new : true });
             res.json(objective);
     } catch (error) {
         console.log(error);

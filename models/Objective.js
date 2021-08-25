@@ -11,7 +11,7 @@ const objetiveSchema = new Schema({
     cantidad_ciclos: { type: Number },
     ciclos_total: { type: Array },
     status: { type: Boolean },
-    user: { type: Schema.ObjectId, ref: 'Users' }
+    user: { type: Schema.ObjectId, ref: Users }
 }, {
     timestamps: true
 });

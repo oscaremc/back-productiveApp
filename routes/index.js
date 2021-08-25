@@ -17,6 +17,8 @@ module.exports = function() {
 
     router.get('/user', userControllers.mostrarUsers );
     router.post('/user', userControllers.nuevoUser );
+    router.post('/auth', userControllers.auth );
+    router.post('/signin', userControllers.signin );
     router.get('/user/:idUser', userControllers.mostrarUser );
     router.put('/user/:idUser', userControllers.actualizarUser );
     router.delete('/user/:idUser', userControllers.eliminarUser );
